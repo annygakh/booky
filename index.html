@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Booky</title>
+	  <link rel="stylesheet" href="js/assets/style.css">
+	  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body id="bookmarkapp">
+	<div class="settings">
+		<p>Click on any tile to edit a bookmark</p>
+		<button class="add">Add a bookmark</button>
+	</div>
+	<div class="bookmarks">
+		<div class="row1-3 center">
+			<!--<div class="bookmark col col1-3 center" >
+				<a href="http://www.google.com" target="_blank">
+					Bookmark 1
+				</a>
+				<button class="edit-bookmark">E</button>
+				<button class="delete-bookmark">X</button>
+				<div class="edit-form totally-hidden">
+					<input id="new-todo" placeholder="Title of your bookmark" autofocus>
+					<input id="new-todo" placeholder="Link of your bookmark" autofocus>
+				</div>
+			</div>-->
+	<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+			
+
+			
+		</div>
+		<div class="row1-3 center">
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>			
+
+		</div>
+
+		<div class="row1-3 center">
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+			<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+		</div>
+		
+	</div>
+	<div class="messagepop pop">
+	 	    <form method="post" id="new_message" action="/messages">
+	 	        <p><label for="title">Title of the website</label><input type="text" name="title" id="title" /></p>
+	 	        <p><label for="link">Link of the website</label><input type="text" name="link" id="link" /></p>
+	 	        <p><input type="submit" value="save" name="commit" id="message_submit"/> or 
+	 	        <a class="close" href="/">Cancel</a></p>
+	 	    </form>
+	 	</div>
+	<!-- Templates -->
+
+	<script type="text/template" id="bookmark-template">
+		<a href="<%=link%>" target="_blank">
+			<%=title%>
+		</a>
+		<button class="edit-bookmark">E</button>
+		<button class="delete-bookmark">X</button>
+
+	</script>
+
+	 	
+	<script type="text/template" id="popup-form">
+		<div class="edit-form">
+			<input id="title" placeholder="Title of your bookmark" autofocus>
+			<input id="link" placeholder="Link of your bookmark" autofocus>
+		</div>
+	</script>
+
+	<script type="text/template" id="bookmark-placeholder-template">
+		<div class="bookmark-placeholder col col1-3 center">Add a bookmark</div>
+	</script>
+
+	<!-- External libraries -->
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/underscore-min.js"></script>
+	<script src="js/lib/backbone-min.js"></script>
+	<script src="js/lib/backbone.localStorage.js"></script>
+
+	<!-- Our files -->
+	<script src="js/models/BookmarkModel.js"></script>
+	<script src="js/collections/BookmarkCollection.js"></script>
+	<script src="js/views/BookmarkView.js"></script>
+	<script src="js/views/AppView.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

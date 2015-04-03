@@ -1,0 +1,132 @@
+body {
+	font-size: initial;
+	background-color: honeydew;
+}
+html, body{
+	font-family: 'Open Sans', sans-serif;
+}
+/* --------- Bookmarks ----------------*/
+.bookmark, .bookmark-placeholder{
+	background-color: lightgreen;
+	padding: 10px;
+	font-size: 3vmax;
+	text-align: center;
+}
+
+.bookmark-placeholder {
+	background-color: lightblue;
+
+
+}
+/* ------------ Popup-----------------*/
+a.selected {
+  background-color:#1F75CC;
+  color:white;
+  z-index:100;
+}
+
+.messagepop {
+  background-color:#FFFFFF;
+  border:1px solid #999999;
+  cursor:default;
+  display:none;
+  margin-top: 15px;
+  position:absolute;
+  text-align:left;
+  width:394px;
+  z-index:50;
+  padding: 25px 25px 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 3px;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.messagepop p, .messagepop.div {
+  border-bottom: 1px solid #EFEFEF;
+  margin: 8px 0;
+  padding-bottom: 8px;
+}
+/*--------------------*/
+
+
+button.delete-bookmark, button.edit-bookmark {
+	background-color: #CF000F;
+	padding: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 5px;
+	margin-left: 5px;
+
+	border-color: transparent;
+	border-radius: 5%;
+}
+button.delete-bookmark:hover, button.edit-bookmark:hover{
+	background-color: black;
+	color: #CF000F;
+
+}
+
+/* -------------- Header ---------------*/
+button.add{
+	background-color: #1BBC9B;
+	padding: 10px;
+	border-color: transparent;
+	border-radius: 5%;
+}
+button.add:hover{
+	background-color: black;
+	color: #1BBC9B;
+	border: 1px solid #1BBC9B;
+
+}
+.settings {
+
+	background-color: lightgrey;
+	text-align: center;
+	margin: 20px auto 20px auto;
+	padding: 10px;
+	width: 95%;
+}
+/*--------------Cols and Rows ---------------*/
+.col1-3 {
+	margin: 20px initial 20px initial;
+}
+.row1-3{
+	display: flex;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+.col {
+
+}
+.totally-hidden {
+	display: none;
+}
+/*------------ Support for diff screen sizes ---------*/
+@media screen and (max-width: 760px)  {
+	.bookmark, .bookmark-placeholder {
+		font-size: initial;
+	}
+	.col1-3 {
+		display: block;
+	}
+}
+@media screen and (max-width: 460px)  {
+	.bookmark {
+		font-size: initial;
+	}
+	.col1-3 {
+		display: block;
+	}
+	.row1-3{
+		display: initial;
+	}
+
+}
