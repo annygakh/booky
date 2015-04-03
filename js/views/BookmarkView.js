@@ -47,6 +47,7 @@ app.BookmarkView = Backbone.View.extend({
 		var templ = this.template_placeholder();
 		this.$el.replaceWith(templ);
 		this.model.destroy();
+		
 	},
 	change: function(e){
 		console.log('change:BookmarkView');

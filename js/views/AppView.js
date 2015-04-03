@@ -7,8 +7,7 @@ app.AppView = Backbone.View.extend({
 	template_popup: _.template( $('#popup-form').html() ),
 
 	events: {
-
-
+		'click .delete-all-bookmarks' : 'deleteAllBookmarks',
 	},
 
 	initialize: function(){
@@ -20,7 +19,7 @@ app.AppView = Backbone.View.extend({
 
 		/* ------------- Initialize listeners -------------  */
 		this.listenTo(app.bookmarks, 'add', this.addOne);
-		this.listenTo(app.bookmarks, 'reset', this.addAll);
+		// this.listenTo(app.bookmarks, 'reset', this.addAll);
 		this.$el.on('click', '.bookmark-placeholder', this.showCreateBookmarkForm);
 
 		/* ------------- Restore saved bookmarks -------------  */
@@ -59,8 +58,8 @@ app.AppView = Backbone.View.extend({
 				var obj = this.createObjectFromInput(edit_form_element, row, col);
 				var bmodel = new app.BookmarkModel(obj);
 				app.bookmarks.create(bmodel);
-				var view = new app.BookmarkView({model: bmodel});
-				bookmark_placeholder_element.replaceWith(view.render().el);
+				
+				// bookmark_placeholder_element.replaceWith(view.render().el);
 				this.retuneListeners();
 			}
 		}
@@ -88,18 +87,20 @@ app.AppView = Backbone.View.extend({
 	/*----------- UI -------------*/
 	addOne: function(bookmark){
 		console.log('addOne:AppView');
-		// var view = new app.BookmarkView({model: bookmark});
 		var col = bookmark.get('col');
 		var row = bookmark.get('row');
-		var $bookmarks = this.$('.bookmarks div:nth-child(' + col + ')');
-		console.log($bookmarks.html());
-
-
-		// todo
+		var $row = this.$('.bookmarks div:nth-child(' + col + ')');
+		var col_ = col+1;
+		var row_ = row+1;
+		var $col = this.$('.bookmarks div:nth-child('+ row_ +') div:nth-child('+ col_+')');
+		var view = new app.BookmarkView({model: bookmark});
+		$col.replaceWith(view.render().el);
 
 	},
-	addAll: function(){
-
+	deleteAllBookmarks: function(){
+		console.log('deleteAllBookmarks:AppView');
+		console.log(app.bookmarks.models);
+		_.invoke(app.bookmarks.models, 'destroy');
 	},
 
 	
