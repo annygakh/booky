@@ -58,12 +58,16 @@ app.BookmarkView = Backbone.View.extend({
 
 			var obj = this.createObjectFromInput(edit_form_element);
 			this.model.set(obj);
+			this.model.save();
 		}
 	},
 
 	createObjectFromInput: function(parent){
 		var title_ = parent.find('input#title').val();
 		var link_ = parent.find('input#link').val();
+		var doesnt_contain_httpwww_prefix = link_.indexOf('http://www.');
+		var PREFIX = "http://www.";
+		var link_ = PREFIX + link_;
 		var obj = {
 			title: title_,
 			link: link_,

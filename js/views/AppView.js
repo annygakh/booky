@@ -75,6 +75,9 @@ app.AppView = Backbone.View.extend({
 	createObjectFromInput: function(parent, row_, col_){
 		var title_ = parent.find('input#title').val();
 		var link_ = parent.find('input#link').val();
+		var doesnt_contain_httpwww_prefix = link_.indexOf('http://www.');
+		var PREFIX = "http://www.";
+		var link_ = PREFIX + link_;
 		var obj = {
 			title: title_,
 			link: link_,
