@@ -121,14 +121,24 @@ label {
 input{
 	padding: 4px;
 	font-family: 'Open Sans', sans-serif;
-	color:  #1E824C;
 	border-radius: 4px;
-	border: 1px solid  #1E824C;
+	/*border: 1px solid  #1E824C;*/
+	/*color:  #1E824C;*/
+	border: 1px solid  black;
+	color:  black;
 }
 input:focus{
   outline-color: transparent;
   outline-style: none;
   outline: none;
+}
+/*----------- text input ---------------*/
+.edit-form {
+	text-align: center;
+}
+.edit-form > * {
+	display: block;
+	margin: 10px auto;
 }
 /*--------------------*/
 button {
