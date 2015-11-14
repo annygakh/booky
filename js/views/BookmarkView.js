@@ -29,7 +29,7 @@ app.BookmarkView = Backbone.View.extend({
 		return this;
 	},
 	edit: function(e) {
-		// console.log('edit:BookmarkView');
+//		 console.log('edit:BookmarkView');
 		var button_element = $(e.currentTarget);
 		var bookmark_element = button_element.parent();
 		var popupform = this.template_popup();
@@ -70,8 +70,9 @@ app.BookmarkView = Backbone.View.extend({
 		
 	},
 	change: function(e){
-		// console.log('change:BookmarkView');
+//		 console.log('change:BookmarkView');
 		if (e.which == ENTER_KEY){
+//            console.log("pressed enter key");
 			this.$el.removeClass('form-is-active');
 			var element = $(e.currentTarget);
 			var edit_form_element = element.parent();
@@ -85,12 +86,6 @@ app.BookmarkView = Backbone.View.extend({
 	createObjectFromInput: function(parent){
 		var title_ = parent.find('input#title').val();
 		var link_ = parent.find('input#link').val();
-		var doesnt_contain_httpwww_prefix = link_.indexOf('http://www.');
-		if (doesnt_contain_httpwww_prefix){
-			var PREFIX = "http://www.";
-			link_ = PREFIX + link_;
-			
-		}
 		var obj = {
 			title: title_,
 			link: link_,
